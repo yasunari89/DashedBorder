@@ -12,12 +12,10 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: CustomPaint(
             foregroundPainter: MyPainter(),
-            child: Center(
-              child: Container(
-                width: 200,
-                height: 100,
-                decoration: BoxDecoration(color: Colors.green),
-              ),
+            child: Container(
+              width: 200,
+              height: 100,
+              decoration: BoxDecoration(color: Colors.green),
             ),
           ),
         ),
@@ -37,10 +35,11 @@ class MyPainter extends CustomPainter {
 
     var path = Path();
     var newPath = Path();
-    path.moveTo(size.width / 2, size.height / 5);
-    path.lineTo(size.width / 4, size.height / 5 * 2);
-    path.lineTo(size.width / 4 * 3, size.height / 5 * 2);
-    path.lineTo(size.width / 2, size.height / 5);
+    path.moveTo(0, 0);
+    path.lineTo(size.width, 0);
+    path.lineTo(size.width, size.height);
+    path.lineTo(0, size.height);
+    path.close();
     for (final PathMetric metric in path.computeMetrics()) {
       bool draw = true;
       double distance = 0.0;
