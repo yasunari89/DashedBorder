@@ -1,4 +1,4 @@
-# dashed_border
+# flutter-dotted-border
 
 A new Flutter application.
 
